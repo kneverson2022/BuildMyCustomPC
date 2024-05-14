@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Slabo+13px:wght@400&amp;family=Lato:wght@400&amp;display=swap">
+    <title>Home Page</title>
+    <style>
+        .fixed-img-size {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        /* Add this CSS for the blue scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #007bff; /* Blue color for the scrollbar */
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0056b3;
+        }
+        
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">BuildMyCustomPC</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="BuildMyCustomPC.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">PC Tips</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="build.html">Build</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contactpage.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="bg-dark text-white text-center py-5">
+        <h1 class="display-4 mb-4">We design, You build!</h1>
+        <h2 class="typing-animation"></h2>
+        <p class="lead">BuildMyCustomPC is the perfect solution for PC building enthusiasts! Our team of expert designers will provide you with the perfect components to suit your build and budget, and you can put it all together and create a personalized PC for gaming, streaming, and more. With our We Design, You Build model, you get the satisfaction of creating a PC that's all your own.</p>
+    </header>
+    
+    <section id="about" class="bg-secondary text-white py-5">
+        <div class="container">
+            <h2 class="mb-4">About us</h2>
+            <p>We aim to create a user-friendly web app for custom PC building. It features a comprehensive database of components, including CPUs, GPUs, motherboards, RAM, storage, power supplies, and cases. Users can search, filter, and compare components based on their preferences and budget.</p>
+            <p>If you have any questions or would like to get started on your custom PC, please feel free to contact us anytime.</p>
+            <p>Thank you, BuildMyCustomPC</p>
+            </div>
+            </section>
+            <section id="services" class="bg-light py-5">
+                <div class="container">
+                    <h2 class="mb-4">Services</h2>
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img src="Apollo.jpg" class="card-img-top fixed-img-size" alt="Custom PC Building">
+                                <div class="card-body">
+                                    <h5 class="card-title">Custom PC Building</h5>
+                                    <p class="card-text">A service that allows customers to customize their own personal computer with a range of hardware and software options.</p>
+                                    <a href="build.html" class="btn btn-primary">Build</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img src="Tech Support.jpg" class="card-img-top fixed-img-size" alt="Tech Support">
+                                <div class="card-body">
+                                    <h5 class="card-title">Tech Support</h5>
+                                    <p class="card-text">Our dedicated team of experts provides technical support and troubleshooting assistance for any issues you may face with your custom PC.</p>
+                                    <a href="contactpage.html" class="btn btn-primary">Contact</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img src="AMD Ryzen 9 7950X3D CPU Feature_678x452.jpg" class="card-img-top fixed-img-size" alt="Upgrades and Maintenance">
+                                <div class="card-body">
+                                    <h5 class="card-title">Our Best Personal PC Tips</h5>
+                                    <p class="card-text">We offer upgrade services and maintenance solutions to ensure your custom PC remains up-to-date and runs smoothly over time.</p>
+                                    <a href="#" class="btn btn-primary">Tips</a>
+                    </div>
+                </div>
+            </section>
+            
+            <footer class="bg-dark text-white text-center py-3">
+                <p>&copy; 2023 BuildMyCustomPC. All rights reserved.</p>
+            </footer>
+            
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+            
+            <script>
+                const text = "Welcome to BuildMyCustomPC!";
+                const typingElement = document.querySelector(".typing-animation");
+                let index = 0;
+            
+                function typeText() {
+                    if (index < text.length) {
+                        typingElement.innerHTML += text.charAt(index);
+                        index++;
+                        setTimeout(typeText, 100);
+                    }
+                }
+            
+                document.addEventListener("DOMContentLoaded", typeText);
+            </script>
+     </body>
+     </html>       

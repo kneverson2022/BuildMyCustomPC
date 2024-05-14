@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Contact Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Slabo+13px:wght@400&amp;family=Lato:wght@400&amp;display=swap">
+    <style>
+      body {
+        background-image: url('light-gray.jpg');
+      }
+      
+
+      .fcf-body {
+        max-width: 800px;
+        margin: 0 auto;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+
+      .fcf-form {
+        background-color: #f1f1f1;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .fcf-form h1 {
+        font-size: 50px;
+        margin-bottom: 1rem;
+      }
+
+      .fcf-form p {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .form-label {
+        font-weight: bold;
+      }
+
+      .sub {
+        font-weight: bold;
+        margin-right: 1rem;
+      }
+      .fixed-img-size {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        /* Add this CSS for the blue scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #007bff; /* Blue color for the scrollbar */
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0056b3;
+        }
+
+        /* Media queries for different screen sizes */
+        @media (max-width: 576px) {
+            .fixed-img-size {
+                height: 150px;
+            }
+        }
+
+        @media (min-width: 577px) and (max-width: 768px) {
+            .fixed-img-size {
+                height: 200px;
+            }
+        }
+
+      html {
+        position: relative;
+        min-height: 100%;
+      }
+
+      body {
+        margin-bottom: 60px;
+        /* height of the footer */
+      }
+
+      footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="BuildMyCustomPC.html">BuildMyCustomPC</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="BuildMyCustomPC.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="tips.html">PC Tips</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="build.html">Build</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contactpage.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>      
+    <div class="fcf-body">
+      <div class="fcf-form">
+        <h1>Contact Us</h1>
+        <p class="typing-animation-contact"></p>
+        <p>Please fill in this form to send us a message.</p>
+        <form id="contact-form" method="post">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="firstname" placeholder="Your Name">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="mail" placeholder="Your Email">
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" name="subject" rows="6" placeholder="Your Message"></textarea>
+          </div>
+          <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+        <div id="response-message" class="mt-3"></div>
+      </div>
+    </div>
+    <footer class="bg-dark text-white text-center py-3">
+      <p>&copy; 2023 BuildMyCustomPC. All rights reserved.</p>
+    </footer>
+    <script>
+      document.getElementById("contact-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+        let xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            document.getElementById("response-message").innerHTML = xhr.responseText;
+          }
+        };
+        let formData = new FormData(event.target);
+        xhr.open("POST", "contact.php", true);
+        xhr.send(formData);
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script>
+        const contactText = "Feel Free to Contact Our Team: Kyle Neverson, Scott Reid, Zack Spricigo, Jonathan Hur";
+        const typingElementContact = document.querySelector(".typing-animation-contact");
+        let contactIndex = 0;
+  
+        function typeTextContact() {
+          if (contactIndex < contactText.length) {
+            typingElementContact.innerHTML += contactText.charAt(contactIndex);
+            contactIndex++;
+            setTimeout(typeTextContact, 100);
+          }
+        }
+  
+        document.addEventListener("DOMContentLoaded", typeTextContact);
+      </script>
+  </body>
+</html>
